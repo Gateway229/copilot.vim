@@ -39,6 +39,12 @@ function ensure_git () {
         git clone https://github.com/github/copilot.vim.git ~/.vim/pack/github/start/copilot.vim
     fi
 
+    # https://github.com/github/copilot.vim/pull/44 womp womp
+    if [ ! -s ~/.vim/pack/github/start/copilot.vim/vim-copilot-setup.vim ]; then
+        echo "Ensuring ~/.vim/pack/github/start/copilot.vim/vim-copilot-setup.vim"
+        echo "Copilot setup" > ~/.vim/pack/github/start/copilot.vim/vim-copilot-setup.vim
+    fi
+
     isdone
 }
 
